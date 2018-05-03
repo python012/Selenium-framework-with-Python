@@ -1,12 +1,11 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+#!/usr/bin/env python3
 
-driver = webdriver.Firefox()
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element_by_name("q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-driver.close()
+# import os
+# import time
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+from utils import config_reader
+
+print(config_reader.driver_path)
+
+
