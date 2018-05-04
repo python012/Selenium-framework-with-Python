@@ -14,4 +14,7 @@ print(base_path + 'utils')
 
 from utils import config_reader
 
-print(config_reader.get_mac_chrome_driver(base_path))
+from utils.config_reader import ConfigReader
+
+print(ConfigReader)
+# print(config_reader.get_mac_chrome_driver(base_path))

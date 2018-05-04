@@ -26,7 +26,7 @@ class TestBaiDu(unittest.TestCase):
         # from utils.config_reader import ConfigReader
         # config = ConfigReader(base_path)
         #self.driver = webdriver.Chrome(executable_path=config.get_win_chrome_driver())
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome() # need add the dirver path to PATH of the system
         self.driver.get(self.URL)
 
     def tearDown(self):
