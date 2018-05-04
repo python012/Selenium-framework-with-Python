@@ -2,8 +2,8 @@
 
 import configparser
 
-config = configparser.ConfigParser()
-config.read('../config/config.ini')
-driver_path = config['dirver']['driver_path']
 
-# print(driver_path)
+def get_mac_chrome_driver(base_path):
+    config = configparser.ConfigParser()
+    config.read(base_path + 'config/config.ini')
+    return config['driver']['driver_path']
