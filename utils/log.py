@@ -2,7 +2,7 @@
 
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from utils.config import ConfigReader
+from utils.config import Config
 
 
 class Logger(object):
