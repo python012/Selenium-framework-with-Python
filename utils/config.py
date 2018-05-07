@@ -18,3 +18,7 @@ class Config(object):
     @classmethod
     def get_win_chrome_driver(cls):
         return cls.__config['win']['chrome_driver_path']
+    
+    @classmethod
+    def get_log_path(cls):
+        return os.path.join(cls.__base_path, 'log')
