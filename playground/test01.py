@@ -12,7 +12,7 @@ else:
 sys.path.append(base_path)
 
 
-from utils.config_reader import ConfigReader
+from utils.config import Config
 
 
-print(ConfigReader(base_path).get_win_chrome_driver())
+print(Config.get_win_chrome_driver())
