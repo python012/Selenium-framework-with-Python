@@ -1,2 +1,0 @@
-NAME = "Reed Xia"
-BIRTH_DATE = "1983.11.10"

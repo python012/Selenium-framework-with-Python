@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from utils.config import Config
+from utils.config import get_log_path
 
 
 class Logger(object):
@@ -26,7 +27,7 @@ class Logger(object):
             self.logger.addHandler(console_handler)
 
             # Create one log file one day
-            file_handler = TimedRotatingFileHandler(filename=Config.get_log_path() + self.log_file_name,
+            file_handler = TimedRotatingFileHandler(filename=os.path.join(get_log_path(), "test.log"),
                                                     when='D',
                                                     interval=1,
                                                     backupCount=self.backup_count,

@@ -2,23 +2,27 @@
 
 import configparser
 import os
-import sys
 
 
-class Config(object):
+__base_path = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
+__config = configparser.ConfigParser()
+__config.read(os.path.join(__base_path, 'config', 'config.ini'))
 
-    __base_path = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
-    __config = configparser.ConfigParser().read(
-        os.path.join(__base_path, 'config', 'config.ini'))
 
-    @classmethod
-    def get_mac_chrome_driver(cls):
-        return cls.__config['mac']['chrome_driver_path']
+def get_mac_chrome_driver():
+    return __config.get('mac', 'chrome_driver_path')
 
-    @classmethod
-    def get_win_chrome_driver(cls):
-        return cls.__config['win']['chrome_driver_path']
-    
-    @classmethod
-    def get_log_path(cls):
-        return os.path.join(cls.__base_path, 'log')
+
+def get_win_chrome_driver():
+    return __config.get('win', 'chrome_driver_path')
+
+
+def get_log_path():
+    return os.path.join(__base_path, 'log')
+
+
+def get_url():
+    return __config.get('url', 'url')
+
+print(get_log_path() + "test.log")
+print(os.path.join(get_log_path(), "test.log"))
