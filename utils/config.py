@@ -19,10 +19,9 @@ def get_win_chrome_driver():
 
 def get_log_path():
     return os.path.join(__base_path, 'log')
-
+    
 
 def get_url():
     return __config.get('url', 'url')
 
-print(get_log_path() + "test.log")
-print(os.path.join(get_log_path(), "test.log"))
+
