@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from utils.config import get_url
 from utils.config import get_linux_firefox_driver
 
@@ -26,7 +27,9 @@ def firefox_driver(scope="function"):
     scope="function" is the default one, which means each 
     test_* will have a fresh new instance of driver
     """
-    driver = webdriver.Firefox(executable_path=get_linux_firefox_driver())
+    cap = DesiredCapabilities().FIREFOX
+    cap["marionette"] = False
+    driver = webdriver.Firefox(capabilities=cap, executable_path=get_linux_firefox_driver())
     driver.get(get_url())
     yield driver
     driver.close()
