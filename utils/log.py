@@ -16,11 +16,12 @@ class Logger(object):
         self.console_output_level = 'WARNING'
         self.file_output_level = 'DEBUG'
 
-        self.formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        self.formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
     def get_logger(self):
 
-        if not self.logger.handlers: # Avoid duplicate log handler
+        if not self.logger.handlers:   # Avoid duplicate log handler
             console_handler = logging.StreamHandler()
             console_handler.setFormatter(self.formatter)
             console_handler.setLevel(self.console_output_level)
@@ -38,5 +39,6 @@ class Logger(object):
             file_handler.setLevel(self.file_output_level)
             self.logger.addHandler(file_handler)
         return self.logger
+
 
 logger = Logger().get_logger()

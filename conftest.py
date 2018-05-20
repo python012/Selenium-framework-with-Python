@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 from utils.config import get_url
+from utils.config import get_linux_firefox_driver
 
 
 @pytest.fixture()
@@ -19,6 +20,16 @@ def chrome_driver(scope="function"):
     yield driver
     driver.close()
 
+@pytest.fixture()
+def firefox_driver(scope="function"):
+    """
+    scope="function" is the default one, which means each 
+    test_* will have a fresh new instance of driver
+    """
+    driver = webdriver.Firefox(executable_path=get_linux_firefox_driver())
+    driver.get(get_url())
+    yield driver
+    driver.close()
 
 @pytest.fixture()
 def some_global_resource(scope="session"):

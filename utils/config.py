@@ -17,11 +17,13 @@ def get_win_chrome_driver():
     return __config.get('win', 'chrome_driver_path')
 
 
+def get_linux_firefox_driver():
+    return __config.get('linux', 'firefox_driver_path')
+
+
 def get_log_path():
     return os.path.join(__base_path, 'log')
     
 
 def get_url():
     return __config.get('url', 'url')
-
-
