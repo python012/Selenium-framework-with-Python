@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from utils.config import URL
-from utils.config import FIREFOX_LINUX_DRIVER_PATH
+from utils.config import FIREFOX_DRIVER_PATH
 
 
 @pytest.fixture()
@@ -29,7 +29,7 @@ def firefox_driver(scope="function"):
     """
     cap = DesiredCapabilities().FIREFOX
     cap["marionette"] = False
-    driver = webdriver.Firefox(capabilities=cap, executable_path=FIREFOX_LINUX_DRIVER_PATH)
+    driver = webdriver.Firefox(capabilities=cap, executable_path=FIREFOX_DRIVER_PATH)
     driver.get(URL)
     yield driver
     driver.close()
