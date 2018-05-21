@@ -1,8 +1,8 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from utils.config import get_url
-from utils.config import get_linux_firefox_driver
+from utils.config import URL
+from utils.config import FIREFOX_LINUX_DRIVER_PATH
 
 
 @pytest.fixture()
@@ -17,7 +17,7 @@ def chrome_driver(scope="function"):
     test_* will have a fresh new instance of driver
     """
     driver = webdriver.Chrome()
-    driver.get(get_url())
+    driver.get(URL)
     yield driver
     driver.close()
 
@@ -29,8 +29,8 @@ def firefox_driver(scope="function"):
     """
     cap = DesiredCapabilities().FIREFOX
     cap["marionette"] = False
-    driver = webdriver.Firefox(capabilities=cap, executable_path=get_linux_firefox_driver())
-    driver.get(get_url())
+    driver = webdriver.Firefox(capabilities=cap, executable_path=FIREFOX_LINUX_DRIVER_PATH)
+    driver.get(URL)
     yield driver
     driver.close()
 
