@@ -1,38 +1,20 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+from utils.webdriver_factory import browser_driver
 from utils.config import URL
-from utils.config import FIREFOX_DRIVER_PATH
 
 
 @pytest.fixture()
-def driver():
-    return  webdriver.Chrome()
-
-
-@pytest.fixture()
-def chrome_driver(scope="function"):
+def driver_fixture(scope="function"):
     """
     scope="function" is the default one, which means each 
     test_* will have a fresh new instance of driver
     """
-    driver = webdriver.Chrome()
+    driver = browser_driver()
     driver.get(URL)
     yield driver
     driver.close()
 
-@pytest.fixture()
-def firefox_driver(scope="function"):
-    """
-    scope="function" is the default one, which means each 
-    test_* will have a fresh new instance of driver
-    """
-    cap = DesiredCapabilities().FIREFOX
-    cap["marionette"] = False
-    driver = webdriver.Firefox(capabilities=cap, executable_path=FIREFOX_DRIVER_PATH)
-    driver.get(URL)
-    yield driver
-    driver.close()
 
 @pytest.fixture()
 def some_global_resource(scope="session"):
