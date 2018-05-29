@@ -10,8 +10,8 @@ __config = configparser.ConfigParser()
 __config.read(os.path.join(__base_path, 'config', __default_ini))
 
 LOG_PATH = os.path.join(__base_path, 'log')
-
 URL = __config.get('url', 'url')
+CONSOLE_LOG_LEVEL = __config.get('LOG', 'CONSOLE_LOG_LEVEL')
 
 __env_dist = os.environ
 

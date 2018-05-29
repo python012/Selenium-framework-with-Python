@@ -4,6 +4,7 @@ import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from utils.configuration import LOG_PATH
+from utils.configuration import CONSOLE_LOG_LEVEL
 
 
 class Logger(object):
@@ -13,7 +14,7 @@ class Logger(object):
         self.log_file_name = 'test.log'
         self.backup_count = 5
 
-        self.console_output_level = 'WARNING'
+        self.console_output_level = CONSOLE_LOG_LEVEL
         self.file_output_level = 'DEBUG'
 
         self.formatter = logging.Formatter(
