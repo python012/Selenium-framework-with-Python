@@ -12,7 +12,7 @@ def browser_driver():
 
     if BROWSER_VENDOR == "Firefox":
         cap = DesiredCapabilities().FIREFOX
-        cap["marionette"] = False
+        # cap["marionette"] = False
         return webdriver.Firefox(capabilities=cap, executable_path=BROWSER_DRIVER)
 
     elif BROWSER_VENDOR == "Chrome":

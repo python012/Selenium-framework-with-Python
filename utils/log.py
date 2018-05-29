@@ -28,7 +28,7 @@ class Logger(object):
             self.logger.addHandler(console_handler)
 
             # Create one log file one day
-            file_handler = TimedRotatingFileHandler(filename=os.path.join(LOG_PATH, "test.log"),
+            file_handler = TimedRotatingFileHandler(filename=os.path.join(LOG_PATH, self.log_file_name),
                                                     when='D',
                                                     interval=1,
                                                     backupCount=self.backup_count,
