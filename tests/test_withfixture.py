@@ -10,6 +10,7 @@ class TestBaiDu(object):
     locator_result = (By.XPATH, '//div[contains(@class, "result")]/h3/a')
 
     def test_search_0(self, driver_fixture): # chrome_driver from /conftest.py
+        logger.info("Sample log info: test_search_0 is launched now.")
         driver_fixture.find_element(*self.locator_kw).send_keys(u'selenium 测试')
         driver_fixture.find_element(*self.locator_su).click()
         time.sleep(2)
@@ -18,6 +19,7 @@ class TestBaiDu(object):
             logger.info(link.text)
 
     def test_search_1(self, driver_fixture):
+        logger.info("Sample log info: test_search_1 is launched now.")
         driver_fixture.find_element(*self.locator_kw).send_keys('Python selenium')
         driver_fixture.find_element(*self.locator_su).click()
         time.sleep(2)
