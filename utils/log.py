@@ -37,7 +37,8 @@ class Logger(object):
                                                     )
             file_handler.setFormatter(self.formatter)
             file_handler.setLevel(self.file_output_level)
-            self.logger.addHandler(file_handler)
+            # self.logger.addHandler(file_handler)
+            self.logger.addHandler(console_handler)
         return self.logger
 
 
