@@ -4,8 +4,8 @@ Return the webdriver object according to browser.vendor
 
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from utils.config import BROWSER_VENDOR
-from utils.config import BROWSER_DRIVER
+from utils.configuration import BROWSER_VENDOR
+from utils.configuration import BROWSER_DRIVER
 
 
 def browser_driver():

@@ -3,7 +3,7 @@
 import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from utils.config import LOG_PATH
+from utils.configuration import LOG_PATH
 
 
 class Logger(object):

@@ -1,7 +1,7 @@
 import pytest
 
 from utils.webdriver_factory import browser_driver
-from utils.config import URL
+from utils.configuration import URL
 
 
 @pytest.fixture()

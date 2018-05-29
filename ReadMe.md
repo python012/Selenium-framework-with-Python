@@ -1,9 +1,7 @@
 # Sunmo
 
-A Web UI automation testing framework on Python, run with Selenium, Pytest.
+Private WebUI automation testing project, using Python, Selenium, Pytest etc.
 
-`pytest -s` to launch all the tests.
+[![Build Status](http://167.99.104.197:8080/buildStatus/icon?job=webUI)](http://167.99.104.197:8080/job/webUI/)
 
-Configuration:
-
-  - Need set up system value WEBUI_SETTINGS_INI to indicate which properties file to use.
+It is still under development, more and more features will be added.
