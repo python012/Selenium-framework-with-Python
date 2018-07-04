@@ -1,5 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
+import sys
+sys.path.append('..')
 from utils.log import logger
 
 
